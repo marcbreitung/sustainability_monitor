@@ -1,0 +1,32 @@
+{
+    "name": "marcbreitung/sustainability-monitor",
+    "description": "Sustainability Monitor - TYPO3 extension for displaying web sustainability metrics in the frontend.",
+    "type": "typo3-cms-extension",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Marc Breitung",
+            "email": "info@marcbreitung.de"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^14"
+    },
+    "autoload": {
+        "psr-4": {
+            "Marcbreitung\\SustainabilityMonitor\\": "Classes/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "typo3/class-alias-loader": true,
+            "typo3/cms-composer-installers": true
+        },
+        "sort-packages": true
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "sustainability_monitor"
+        }
+    }
+}
