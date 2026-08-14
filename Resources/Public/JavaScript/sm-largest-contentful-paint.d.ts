@@ -1,9 +1,9 @@
 import type { Components, JSX } from "../../../Build/sustainability-monitor/dist/types/components";
 
-interface MyComponent extends Components.MyComponent, HTMLElement {}
-export const MyComponent: {
-    prototype: MyComponent;
-    new (): MyComponent;
+interface SmLargestContentfulPaint extends Components.SmLargestContentfulPaint, HTMLElement {}
+export const SmLargestContentfulPaint: {
+    prototype: SmLargestContentfulPaint;
+    new (): SmLargestContentfulPaint;
 };
 /**
  * Used to define this component and all nested components recursively.

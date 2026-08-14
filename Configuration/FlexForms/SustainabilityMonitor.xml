@@ -1,0 +1,66 @@
+<T3DataStructure>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <sheetTitle>sustainability_monitor.db:flexforms_tab.settings</sheetTitle>
+                <type>array</type>
+                <el>
+                    <settings.enableLargestContentfulPaint>
+                        <label>Enable Largest Contentful Paint</label>
+                        <config>
+                            <type>check</type>
+                        </config>
+                    </settings.enableLargestContentfulPaint>
+                    <settings.label>
+                        <label>Label</label>
+                        <config>
+                            <type>input</type>
+                            <size>50</size>
+                            <default>Largest Contentful Paint</default>
+                        </config>
+                    </settings.label>
+                    <settings.highlightElementLabel>
+                        <label>Highlight element label</label>
+                        <config>
+                            <type>input</type>
+                            <size>10</size>
+                            <default>?</default>
+                        </config>
+                    </settings.highlightElementLabel>
+                    <settings.highlightElementClass>
+                        <label>Highlight element class</label>
+                        <config>
+                            <type>input</type>
+                            <size>50</size>
+                            <default>highlighted</default>
+                        </config>
+                    </settings.highlightElementClass>
+                    <settings.ariaLabel>
+                        <label>Aria label for the highlight button</label>
+                        <config>
+                            <type>input</type>
+                            <size>50</size>
+                            <default>Show Largest Contentful Paint Element</default>
+                        </config>
+                    </settings.ariaLabel>
+                    <settings.highlight>
+                        <label>Highlight LCP element</label>
+                        <config>
+                            <type>check</type>
+                            <default>0</default>
+                        </config>
+                    </settings.highlight>
+                    <settings.popoverText>
+                        <label>Popover text</label>
+                        <config>
+                            <type>text</type>
+                            <cols>50</cols>
+                            <rows>3</rows>
+                            <default>Click to highlight the largest contentful paint element</default>
+                        </config>
+                    </settings.popoverText>
+                </el>
+            </ROOT>
+        </sDEF>
+    </sheets>
+</T3DataStructure>

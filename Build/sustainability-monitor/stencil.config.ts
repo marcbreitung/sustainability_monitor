@@ -10,6 +10,10 @@ export const config: Config = {
       dir: './../../Resources/Public/JavaScript',
     },
     {
+      type: 'www',
+      serviceWorker: null, // disable service workers
+    },
+    {
       type: 'docs-readme',
     },
   ],

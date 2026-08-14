@@ -1,0 +1,24 @@
+:host {
+  display: block;
+}
+
+.lcp-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.popover {
+  position: absolute;
+  position-anchor: --button-anchor;
+  position-area: end;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+.highlight-button {
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  anchor-name: --button-anchor;
+}

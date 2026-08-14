@@ -6,63 +6,102 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
+    interface SmLargestContentfulPaint {
         /**
-          * The first name
+          * Aria label for the highlight button
+          * @default 'Show Largest Contentful Paint Element'
          */
-        "first"?: string;
+        "ariaLabel": string;
         /**
-          * The last name
+          * Highlight LCP element
+          * @default false
          */
-        "last"?: string;
+        "highlight": boolean;
         /**
-          * The middle name
+          * Highlight element class
+          * @default 'highlighted'
          */
-        "middle"?: string;
+        "highlightElementClass": string;
+        /**
+          * Highlight element label
+          * @default '?'
+         */
+        "highlightElementLabel": string;
+        /**
+          * Label
+          * @default 'Largest Contentful Paint'
+         */
+        "label": string;
+        /**
+          * Popover text
+          * @default 'Click to highlight the largest contentful paint element'
+         */
+        "popoverText": string;
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLSmLargestContentfulPaintElement extends Components.SmLargestContentfulPaint, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLSmLargestContentfulPaintElement: {
+        prototype: HTMLSmLargestContentfulPaintElement;
+        new (): HTMLSmLargestContentfulPaintElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "sm-largest-contentful-paint": HTMLSmLargestContentfulPaintElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
+    interface SmLargestContentfulPaint {
         /**
-          * The first name
+          * Aria label for the highlight button
+          * @default 'Show Largest Contentful Paint Element'
          */
-        "first"?: string;
+        "ariaLabel"?: string;
         /**
-          * The last name
+          * Highlight LCP element
+          * @default false
          */
-        "last"?: string;
+        "highlight"?: boolean;
         /**
-          * The middle name
+          * Highlight element class
+          * @default 'highlighted'
          */
-        "middle"?: string;
+        "highlightElementClass"?: string;
+        /**
+          * Highlight element label
+          * @default '?'
+         */
+        "highlightElementLabel"?: string;
+        /**
+          * Label
+          * @default 'Largest Contentful Paint'
+         */
+        "label"?: string;
+        /**
+          * Popover text
+          * @default 'Click to highlight the largest contentful paint element'
+         */
+        "popoverText"?: string;
     }
 
-    interface MyComponentAttributes {
-        "first": string;
-        "middle": string;
-        "last": string;
+    interface SmLargestContentfulPaintAttributes {
+        "label": string;
+        "highlightElementLabel": string;
+        "highlightElementClass": string;
+        "ariaLabel": string;
+        "highlight": boolean;
+        "popoverText": string;
     }
 
     interface IntrinsicElements {
-        "my-component": Omit<MyComponent, keyof MyComponentAttributes> & { [K in keyof MyComponent & keyof MyComponentAttributes]?: MyComponent[K] } & { [K in keyof MyComponent & keyof MyComponentAttributes as `attr:${K}`]?: MyComponentAttributes[K] } & { [K in keyof MyComponent & keyof MyComponentAttributes as `prop:${K}`]?: MyComponent[K] };
+        "sm-largest-contentful-paint": Omit<SmLargestContentfulPaint, keyof SmLargestContentfulPaintAttributes> & { [K in keyof SmLargestContentfulPaint & keyof SmLargestContentfulPaintAttributes]?: SmLargestContentfulPaint[K] } & { [K in keyof SmLargestContentfulPaint & keyof SmLargestContentfulPaintAttributes as `attr:${K}`]?: SmLargestContentfulPaintAttributes[K] } & { [K in keyof SmLargestContentfulPaint & keyof SmLargestContentfulPaintAttributes as `prop:${K}`]?: SmLargestContentfulPaint[K] };
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.IntrinsicElements["my-component"] & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "sm-largest-contentful-paint": LocalJSX.IntrinsicElements["sm-largest-contentful-paint"] & JSXBase.HTMLAttributes<HTMLSmLargestContentfulPaintElement>;
         }
     }
 }

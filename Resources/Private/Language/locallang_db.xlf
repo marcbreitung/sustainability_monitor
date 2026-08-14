@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en">
+    <file id="f1">
+        <unit id="plugin.sustainabilitymonitor.title">
+            <segment>
+                <source>Sustainability Monitor</source>
+            </segment>
+        </unit>
+        <unit id="plugin.sustainabilitymonitor.description">
+            <segment>
+                <source>Sustainability Monitor Plugin</source>
+            </segment>
+        </unit>
+        <unit id="sustainability_monitor.db:flexforms_tab.settings">
+            <segment>
+                <source>Settings</source>
+            </segment>
+        </unit>
+    </file>
+</xliff>

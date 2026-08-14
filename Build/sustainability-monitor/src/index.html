@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-    <title>Stencil Component Starter</title>
 
-    <script type="module" src="/build/sustainability-monitor.esm.js"></script>
-    <script nomodule src="/build/sustainability-monitor.js"></script>
-  </head>
-  <body>
-    <my-component first="Stencil" middle="'Don't call me a framework'" last="JS"></my-component>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Stencil Component Starter</title>
+
+  <script type="module" src="/build/sustainability-monitor.esm.js"></script>
+  <script nomodule src="/build/sustainability-monitor.js"></script>
+  <style>
+    .highlighted {
+      background-color: yellow;
+      transition: background-color 0.5s ease;
+    }
+  </style>
+</head>
+
+<body>
+  <div>Lorem ipsum dolor sit amet</div>
+  <div>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</div>
+  <sm-largest-contentful-paint label="Largest Contentful Paint" highlight-element-label="?" aria-label="Show Largest Contentful Paint Element" highlight></sm-largest-contentful-paint>
+</body>
+
 </html>
