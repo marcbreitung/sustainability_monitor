@@ -22,23 +22,42 @@ export class SmNumberOfRequests {
   @State() isReady: boolean = false;
 
   /**
-   * Performance observer for LCP
+   * Calculates the number of resource requests
    */
-  private performanceObserver?: PerformanceObserver;
+  private requestsObserver?: PerformanceObserver;
 
+  /**
+   * Calculates the number of navigation requests
+   */
+  private navigationObserver?: PerformanceObserver;
+
+  /**
+   * Calculates the number of resource requests
+   * @param list 
+   */
   calculateNumberOfRequests(list: PerformanceObserverEntryList) {
     this.numberOfRequests += list.getEntries().length;
     this.isReady = true;
   }
 
+  /**
+   * The actual document is not part of the resource timing API, so we need to use a navigation observer to get the number of requests for the document itself.
+   * @param list 
+   */
+  calculateNavigationRequests(list: PerformanceObserverEntryList) {
+    this.numberOfRequests += list.getEntries().length;
+    this.isReady = true;
+  }
+
   componentDidLoad() {
-    if (typeof PerformanceObserver === 'undefined' || this.performanceObserver) {
+    if (typeof PerformanceObserver === 'undefined' || this.requestsObserver) {
       console.error('PerformanceObserver is not supported in this browser.');
       return;
     }
-
-    this.performanceObserver = new PerformanceObserver((list) => this.calculateNumberOfRequests(list));
-    this.performanceObserver.observe({ type: 'resource', buffered: true });
+    this.requestsObserver = new PerformanceObserver((list) => this.calculateNumberOfRequests(list));
+    this.requestsObserver.observe({ type: 'resource', buffered: true });
+    this.navigationObserver = new PerformanceObserver((list) => this.calculateNavigationRequests(list));
+    this.navigationObserver.observe({ type: 'navigation', buffered: true });
   }
 
   render() {
