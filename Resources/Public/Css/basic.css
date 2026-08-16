@@ -1,0 +1,34 @@
+/**
+ * Override styles for the sm-largest-contentful-paint
+ */
+sm-largest-contentful-paint::part(container) {
+    color: black;
+}
+
+sm-largest-contentful-paint::part(value) {
+    font-size: 1.5rem;
+}
+
+sm-largest-contentful-paint::part(button) {
+    color: black;
+}
+
+sm-largest-contentful-paint::part(popover) {
+    font-size: 0.8rem;
+    color: gray;
+}
+
+/**
+ * Override styles for the sm-number-of-requests
+ */
+sm-number-of-requests::part(container) {
+    color: black;
+}
+
+sm-number-of-requests::part(value) {
+    font-size: 1.5rem;
+}
+
+sm-number-of-requests::part(button) {
+    color: black;
+}

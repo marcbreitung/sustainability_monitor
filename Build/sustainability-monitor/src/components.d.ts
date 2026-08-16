@@ -28,6 +28,11 @@ export namespace Components {
          */
         "highlightLabel": string;
         /**
+          * Title
+          * @default 'The Largest Contentful Paint is calculated based on the startTime property of the last entry in the PerformanceObserverEntryList.'
+         */
+        "info": string;
+        /**
           * Label
           * @default 'Largest Contentful Paint'
          */
@@ -39,6 +44,11 @@ export namespace Components {
         "popoverText": string;
     }
     interface SmNumberOfRequests {
+        /**
+          * Title
+          * @default 'The number of requests is calculated based on the number of entries in the PerformanceObserverEntryList for resource and navigation entries.'
+         */
+        "info": string;
         /**
           * Label
           * @default 'Number of Requests'
@@ -87,6 +97,11 @@ declare namespace LocalJSX {
          */
         "highlightLabel"?: string;
         /**
+          * Title
+          * @default 'The Largest Contentful Paint is calculated based on the startTime property of the last entry in the PerformanceObserverEntryList.'
+         */
+        "info"?: string;
+        /**
           * Label
           * @default 'Largest Contentful Paint'
          */
@@ -98,6 +113,11 @@ declare namespace LocalJSX {
         "popoverText"?: string;
     }
     interface SmNumberOfRequests {
+        /**
+          * Title
+          * @default 'The number of requests is calculated based on the number of entries in the PerformanceObserverEntryList for resource and navigation entries.'
+         */
+        "info"?: string;
         /**
           * Label
           * @default 'Number of Requests'
@@ -112,9 +132,11 @@ declare namespace LocalJSX {
         "highlightClass": string;
         "ariaLabel": string;
         "popoverText": string;
+        "info": string;
     }
     interface SmNumberOfRequestsAttributes {
         "label": string;
+        "info": string;
     }
 
     interface IntrinsicElements {

@@ -10,8 +10,21 @@
   color: var(--text-color);
 }
 
+.label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .value {
   transition: opacity 0.3s ease-in-out;
+  flex-grow: 0;
+  flex-basis: 4rem;
+}
+
+.info {
+  text-decoration: underline dotted;
+  cursor: help;
 }
 
 .loading .value {

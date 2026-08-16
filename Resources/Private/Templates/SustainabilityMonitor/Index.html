@@ -1,15 +1,20 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 
+<f:if condition="{settings.cssFile}">
+    <f:asset.css identifier="ext-news" href="{settings.cssFile}" />
+</f:if>
 
 <f:if condition="{settings.enableLargestContentfulPaint}">
     <sm-largest-contentful-paint label="{f:translate(key: 'plugin.sustainabilitymonitor.largestContentfulPaint.label')}" highlight="{settings.highlightLargestContentfulPaint}"
         highlight-class="{settings.highlightClassLargestContentfulPaint}" highlight-label="{f:translate(key: 'plugin.sustainabilitymonitor.largestContentfulPaint.highlightLabel')}"
-        aria-label="{f:translate(key: 'plugin.sustainabilitymonitor.largestContentfulPaint.ariaLabel')}" popover-text="{f:translate(key: 'plugin.sustainabilitymonitor.largestContentfulPaint.popoverText')}">
+        aria-label="{f:translate(key: 'plugin.sustainabilitymonitor.largestContentfulPaint.ariaLabel')}" popover-text="{f:translate(key: 'plugin.sustainabilitymonitor.largestContentfulPaint.popoverText')}"
+        info="{f:translate(key: 'plugin.sustainabilitymonitor.largestContentfulPaint.info')}">
     </sm-largest-contentful-paint>
 </f:if>
 
 <f:if condition="{settings.enableNumberOfRequests}">
-    <sm-number-of-requests label="{f:translate(key: 'plugin.sustainabilitymonitor.numberOfRequests.label')}"></sm-number-of-requests>
+    <sm-number-of-requests label="{f:translate(key: 'plugin.sustainabilitymonitor.numberOfRequests.label')}" info="{f:translate(key: 'plugin.sustainabilitymonitor.numberOfRequests.info')}">
+    </sm-number-of-requests>
 </f:if>
 
 </html>

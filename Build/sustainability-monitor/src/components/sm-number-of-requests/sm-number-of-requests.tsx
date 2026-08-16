@@ -22,6 +22,11 @@ export class SmNumberOfRequests {
   @State() isReady: boolean = false;
 
   /**
+   * Title
+   */
+  @Prop() info: string = 'The number of requests is calculated based on the number of entries in the PerformanceObserverEntryList for resource and navigation entries.';
+
+  /**
    * Calculates the number of resource requests
    */
   private requestsObserver?: PerformanceObserver;
@@ -65,7 +70,9 @@ export class SmNumberOfRequests {
       <Host>
         <div class={{ 'container': true, 'loading': !this.isReady, 'ready': this.isReady }} part="container">
           <div class="value" part="value">{this.numberOfRequests}</div>
-          {this.label && <div class="label" part="label">{this.label}</div>}
+          {this.label && <div class="label" part="label">
+            {this.info ? <span class="info" title={this.info}>{this.label}</span> : <span>{this.label}</span>}
+          </div>}
         </div>
       </Host >
     );

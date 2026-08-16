@@ -26,9 +26,21 @@
                 <source>Click to highlight the largest contentful paint element</source>
             </segment>
         </unit>
+        <unit id="plugin.sustainabilitymonitor.largestContentfulPaint.info">
+            <segment>
+                <source>The Largest Contentful Paint is calculated based on the startTime property
+                    of the last entry in the PerformanceObserverEntryList.</source>
+            </segment>
+        </unit>
         <unit id="plugin.sustainabilitymonitor.numberOfRequests.label">
             <segment>
                 <source>Number of Requests</source>
+            </segment>
+        </unit>
+        <unit id="plugin.sustainabilitymonitor.numberOfRequests.info">
+            <segment>
+                <source>The number of requests is calculated based on the number of entries in the
+                    PerformanceObserverEntryList.</source>
             </segment>
         </unit>
     </file>

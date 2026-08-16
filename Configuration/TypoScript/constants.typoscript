@@ -1,0 +1,6 @@
+plugin.tx_sustainabilitymonitor {
+    settings {
+         # cat=plugin.tx_sustainabilitymonitor/file; type=string; label=Path to CSS file
+        cssFile = EXT:sustainability_monitor/Resources/Public/Css/basic.css
+    }
+}

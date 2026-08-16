@@ -38,6 +38,11 @@ export class SmLargestContentfulPaint {
   @Prop() popoverText: string = 'Click to highlight the largest contentful paint element';
 
   /**
+   * Title
+   */
+  @Prop() info: string = 'The Largest Contentful Paint is calculated based on the startTime property of the last entry in the PerformanceObserverEntryList.';
+
+  /**
    * Largest Contentful Paint value
    */
   @State() lcp: number = 0;
@@ -106,7 +111,7 @@ export class SmLargestContentfulPaint {
         <div class={{ 'container': true, 'loading': !this.isReady, 'ready': this.isReady }} part="container">
           <div class="value" part="value">{formatTime(this.lcp)}</div>
           {this.label && <div class="label" part="label">
-            {this.label}
+            {this.info ? <span class="info" title={this.info}>{this.label}</span> : <span>{this.label}</span>}
             {this.highlight && <div><button
               disabled={!this.highlightElement}
               popoverTarget="auto"
