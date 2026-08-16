@@ -3,12 +3,12 @@
     <file id="f1">
         <unit id="plugin.sustainabilitymonitor.title">
             <segment>
-                <source>Sustainability Monitor</source>
+                <source>Sustainability Monitor Components</source>
             </segment>
         </unit>
         <unit id="plugin.sustainabilitymonitor.description">
             <segment>
-                <source>Sustainability Monitor Plugin</source>
+                <source>Largest Contentful Paint, Number of Requests</source>
             </segment>
         </unit>
         <unit id="flexforms_tab.settings.largestcontentfulpaint">

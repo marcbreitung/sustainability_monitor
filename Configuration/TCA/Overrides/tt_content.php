@@ -8,7 +8,7 @@ ExtensionUtility::registerPlugin(
     'SustainabilityMonitor',
     'Components',
     'sustainability_monitor.db:plugin.sustainabilitymonitor.title',
-    'actions-globe',
+    'tx-sustainability_monitor-icon',
     'plugins',
     'sustainability_monitor.db:plugin.sustainabilitymonitor.description',
     'FILE:EXT:sustainability_monitor/Configuration/FlexForms/SustainabilityMonitor.xml',
