@@ -1,8 +1,8 @@
 <T3DataStructure>
     <sheets>
-        <sDEF>
+        <sEnableLargestContentfulPaint>
             <ROOT>
-                <sheetTitle>sustainability_monitor.db:flexforms_tab.settings</sheetTitle>
+                <sheetTitle>sustainability_monitor.db:flexforms_tab.settings.largestcontentfulpaint</sheetTitle>
                 <type>array</type>
                 <el>
                     <settings.enableLargestContentfulPaint>
@@ -11,56 +11,37 @@
                             <type>check</type>
                         </config>
                     </settings.enableLargestContentfulPaint>
-                    <settings.label>
-                        <label>Label</label>
-                        <config>
-                            <type>input</type>
-                            <size>50</size>
-                            <default>Largest Contentful Paint</default>
-                        </config>
-                    </settings.label>
-                    <settings.highlightElementLabel>
-                        <label>Highlight element label</label>
-                        <config>
-                            <type>input</type>
-                            <size>10</size>
-                            <default>?</default>
-                        </config>
-                    </settings.highlightElementLabel>
-                    <settings.highlightElementClass>
-                        <label>Highlight element class</label>
-                        <config>
-                            <type>input</type>
-                            <size>50</size>
-                            <default>highlighted</default>
-                        </config>
-                    </settings.highlightElementClass>
-                    <settings.ariaLabel>
-                        <label>Aria label for the highlight button</label>
-                        <config>
-                            <type>input</type>
-                            <size>50</size>
-                            <default>Show Largest Contentful Paint Element</default>
-                        </config>
-                    </settings.ariaLabel>
-                    <settings.highlight>
-                        <label>Highlight LCP element</label>
+                    <settings.highlightLargestContentfulPaint>
+                        <label>Highlight element</label>
                         <config>
                             <type>check</type>
                             <default>0</default>
                         </config>
-                    </settings.highlight>
-                    <settings.popoverText>
-                        <label>Popover text</label>
+                    </settings.highlightLargestContentfulPaint>
+                    <settings.highlightClassLargestContentfulPaint>
+                        <label>Highlight CSS class</label>
                         <config>
-                            <type>text</type>
-                            <cols>50</cols>
-                            <rows>3</rows>
-                            <default>Click to highlight the largest contentful paint element</default>
+                            <type>input</type>
+                            <size>30</size>
+                            <default>highlighted</default>
                         </config>
-                    </settings.popoverText>
+                    </settings.highlightClassLargestContentfulPaint>
                 </el>
             </ROOT>
-        </sDEF>
+        </sEnableLargestContentfulPaint>
+        <sNumberOfRequests>
+            <ROOT>
+                <sheetTitle>sustainability_monitor.db:flexforms_tab.settings.numberofrequests</sheetTitle>
+                <type>array</type>
+                <el>
+                    <settings.enableNumberOfRequests>
+                        <label>Enable Number of Requests</label>
+                        <config>
+                            <type>check</type>
+                        </config>
+                    </settings.enableNumberOfRequests>
+                </el>
+            </ROOT>
+        </sNumberOfRequests>
     </sheets>
 </T3DataStructure>

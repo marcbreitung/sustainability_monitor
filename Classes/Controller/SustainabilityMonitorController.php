@@ -24,6 +24,13 @@ class SustainabilityMonitorController extends ActionController
                 ['type' => 'module']
             );
         }
+        if ($this->settings['enableNumberOfRequests'] ?? false) {
+            $this->assetCollector->addJavaScript(
+                'sustainability-monitor-number-of-requests',
+                'EXT:sustainability_monitor/Resources/Public/JavaScript/sm-number-of-requests.js',
+                ['type' => 'module']
+            );
+        }
         return $this->htmlResponse();
     }
 }

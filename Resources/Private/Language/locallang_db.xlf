@@ -11,9 +11,14 @@
                 <source>Sustainability Monitor Plugin</source>
             </segment>
         </unit>
-        <unit id="sustainability_monitor.db:flexforms_tab.settings">
+        <unit id="flexforms_tab.settings.largestcontentfulpaint">
             <segment>
-                <source>Settings</source>
+                <source>Largest Contentful Paint</source>
+            </segment>
+        </unit>
+        <unit id="flexforms_tab.settings.numberofrequests">
+            <segment>
+                <source>Number of Requests</source>
             </segment>
         </unit>
     </file>

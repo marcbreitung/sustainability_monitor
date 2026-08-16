@@ -1,24 +1,47 @@
 :host {
   display: block;
+  --text-color: black;
+  --popover-text-color: black;
+  --popover-background-color: #fff;
+  --popover-border-color: #ccc;
 }
 
-.lcp-container {
+.container {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  color: var(--text-color);
 }
 
 .popover {
   position: absolute;
   position-anchor: --button-anchor;
   position-area: end;
-  border: 1px solid #ccc;
-  background-color: #fff;
+  border: 1px solid var(--popover-border-color);
+  background-color: var(--popover-background-color);
 }
 
-.highlight-button {
+.button {
   border: none;
   border-radius: 50%;
   cursor: pointer;
   anchor-name: --button-anchor;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.value {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.loading .value {
+  opacity: 0.5;
+}
+
+.ready .value {
+  opacity: 1;
 }

@@ -1,0 +1,23 @@
+:host {
+  display: block;
+  --text-color: black;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-color);
+}
+
+.value {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.loading .value {
+  opacity: 0.5;
+}
+
+.ready .value {
+  opacity: 1;
+}

@@ -13,14 +13,9 @@
       "import": "./dist/sustainability-monitor/sustainability-monitor.esm.js",
       "require": "./dist/sustainability-monitor/sustainability-monitor.cjs.js"
     },
-    "./my-component": {
-      "import": "./dist/components/my-component.js",
-      "types": "./dist/components/my-component.d.ts"
-    },
-    "./loader": {
-      "import": "./loader/index.js",
-      "require": "./loader/index.cjs",
-      "types": "./loader/index.d.ts"
+    "./sm-largest-contentful-paint": {
+      "import": "./dist/components/sm-largest-contentful-paint.js",
+      "types": "./dist/components/sm-largest-contentful-paint.d.ts"
     }
   },
   "repository": {
@@ -28,14 +23,15 @@
     "url": "https://github.com/stenciljs/component-starter.git"
   },
   "files": [
-    "dist/",
-    "loader/"
+    "dist/"
   ],
   "scripts": {
     "build": "stencil build",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil-test --prod",
     "test:watch": "stencil-test --prod --watch",
+    "test:e2e": "stencil-test --project browser",
+    "test:spec": "stencil-test --project spec",
     "generate": "stencil generate"
   },
   "devDependencies": {

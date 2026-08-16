@@ -1,11 +1,35 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<xliff version="1.0">
-    <file source-language="en" datatype="plaintext" original="messages" date="2026-08-13UTC18:47:000">
-        <header>
-            <authorName>Marc Breitung</authorName>
-            <authorEmail>mbreitung@drole.de</authorEmail>
-        </header>
-        <body>
-        </body>
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en">
+    <file id="f1">
+        <unit id="plugin.sustainabilitymonitor.title">
+            <segment>
+                <source>Sustainability Monitor</source>
+            </segment>
+        </unit>
+        <unit id="plugin.sustainabilitymonitor.largestContentfulPaint.label">
+            <segment>
+                <source>Largest Contentful Paint</source>
+            </segment>
+        </unit>
+        <unit id="plugin.sustainabilitymonitor.largestContentfulPaint.highlightLabel">
+            <segment>
+                <source>?</source>
+            </segment>
+        </unit>
+        <unit id="plugin.sustainabilitymonitor.largestContentfulPaint.ariaLabel">
+            <segment>
+                <source>Show Largest Contentful Paint Element</source>
+            </segment>
+        </unit>
+        <unit id="plugin.sustainabilitymonitor.largestContentfulPaint.popoverText">
+            <segment>
+                <source>Click to highlight the largest contentful paint element</source>
+            </segment>
+        </unit>
+        <unit id="plugin.sustainabilitymonitor.numberOfRequests.label">
+            <segment>
+                <source>Number of Requests</source>
+            </segment>
+        </unit>
     </file>
 </xliff>

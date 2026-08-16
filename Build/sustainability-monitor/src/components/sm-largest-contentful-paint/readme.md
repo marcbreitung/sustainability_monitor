@@ -7,14 +7,25 @@ This component displays the Largest Contentful Paint (LCP) value and provides a 
 
 ## Properties
 
-| Property                | Attribute                 | Description                         | Type      | Default                                                     |
-| ----------------------- | ------------------------- | ----------------------------------- | --------- | ----------------------------------------------------------- |
-| `ariaLabel`             | `aria-label`              | Aria label for the highlight button | `string`  | `'Show Largest Contentful Paint Element'`                   |
-| `highlight`             | `highlight`               | Highlight LCP element               | `boolean` | `false`                                                     |
-| `highlightElementClass` | `highlight-element-class` | Highlight element class             | `string`  | `'highlighted'`                                             |
-| `highlightElementLabel` | `highlight-element-label` | Highlight element label             | `string`  | `'?'`                                                       |
-| `label`                 | `label`                   | Label                               | `string`  | `'Largest Contentful Paint'`                                |
-| `popoverText`           | `popover-text`            | Popover text                        | `string`  | `'Click to highlight the largest contentful paint element'` |
+| Property         | Attribute         | Description                 | Type      | Default                                                     |
+| ---------------- | ----------------- | --------------------------- | --------- | ----------------------------------------------------------- |
+| `ariaLabel`      | `aria-label`      | Highlight button aria-label | `string`  | `'Show Largest Contentful Paint Element'`                   |
+| `highlight`      | `highlight`       | Highlight LCP element       | `boolean` | `false`                                                     |
+| `highlightClass` | `highlight-class` | Highlight element class     | `string`  | `'highlighted'`                                             |
+| `highlightLabel` | `highlight-label` | Highlight element label     | `string`  | `'?'`                                                       |
+| `label`          | `label`           | Label                       | `string`  | `'Largest Contentful Paint'`                                |
+| `popoverText`    | `popover-text`    | Popover text                | `string`  | `'Click to highlight the largest contentful paint element'` |
+
+
+## Shadow Parts
+
+| Part          | Description |
+| ------------- | ----------- |
+| `"button"`    |             |
+| `"container"` |             |
+| `"label"`     |             |
+| `"popover"`   |             |
+| `"value"`     |             |
 
 
 ----------------------------------------------

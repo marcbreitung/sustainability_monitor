@@ -8,7 +8,7 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface SmLargestContentfulPaint {
         /**
-          * Aria label for the highlight button
+          * Highlight button aria-label
           * @default 'Show Largest Contentful Paint Element'
          */
         "ariaLabel": string;
@@ -21,12 +21,12 @@ export namespace Components {
           * Highlight element class
           * @default 'highlighted'
          */
-        "highlightElementClass": string;
+        "highlightClass": string;
         /**
           * Highlight element label
           * @default '?'
          */
-        "highlightElementLabel": string;
+        "highlightLabel": string;
         /**
           * Label
           * @default 'Largest Contentful Paint'
@@ -38,6 +38,13 @@ export namespace Components {
          */
         "popoverText": string;
     }
+    interface SmNumberOfRequests {
+        /**
+          * Label
+          * @default 'Number of Requests'
+         */
+        "label": string;
+    }
 }
 declare global {
     interface HTMLSmLargestContentfulPaintElement extends Components.SmLargestContentfulPaint, HTMLStencilElement {
@@ -46,14 +53,21 @@ declare global {
         prototype: HTMLSmLargestContentfulPaintElement;
         new (): HTMLSmLargestContentfulPaintElement;
     };
+    interface HTMLSmNumberOfRequestsElement extends Components.SmNumberOfRequests, HTMLStencilElement {
+    }
+    var HTMLSmNumberOfRequestsElement: {
+        prototype: HTMLSmNumberOfRequestsElement;
+        new (): HTMLSmNumberOfRequestsElement;
+    };
     interface HTMLElementTagNameMap {
         "sm-largest-contentful-paint": HTMLSmLargestContentfulPaintElement;
+        "sm-number-of-requests": HTMLSmNumberOfRequestsElement;
     }
 }
 declare namespace LocalJSX {
     interface SmLargestContentfulPaint {
         /**
-          * Aria label for the highlight button
+          * Highlight button aria-label
           * @default 'Show Largest Contentful Paint Element'
          */
         "ariaLabel"?: string;
@@ -66,12 +80,12 @@ declare namespace LocalJSX {
           * Highlight element class
           * @default 'highlighted'
          */
-        "highlightElementClass"?: string;
+        "highlightClass"?: string;
         /**
           * Highlight element label
           * @default '?'
          */
-        "highlightElementLabel"?: string;
+        "highlightLabel"?: string;
         /**
           * Label
           * @default 'Largest Contentful Paint'
@@ -83,18 +97,29 @@ declare namespace LocalJSX {
          */
         "popoverText"?: string;
     }
+    interface SmNumberOfRequests {
+        /**
+          * Label
+          * @default 'Number of Requests'
+         */
+        "label"?: string;
+    }
 
     interface SmLargestContentfulPaintAttributes {
         "label": string;
-        "highlightElementLabel": string;
-        "highlightElementClass": string;
-        "ariaLabel": string;
         "highlight": boolean;
+        "highlightLabel": string;
+        "highlightClass": string;
+        "ariaLabel": string;
         "popoverText": string;
+    }
+    interface SmNumberOfRequestsAttributes {
+        "label": string;
     }
 
     interface IntrinsicElements {
         "sm-largest-contentful-paint": Omit<SmLargestContentfulPaint, keyof SmLargestContentfulPaintAttributes> & { [K in keyof SmLargestContentfulPaint & keyof SmLargestContentfulPaintAttributes]?: SmLargestContentfulPaint[K] } & { [K in keyof SmLargestContentfulPaint & keyof SmLargestContentfulPaintAttributes as `attr:${K}`]?: SmLargestContentfulPaintAttributes[K] } & { [K in keyof SmLargestContentfulPaint & keyof SmLargestContentfulPaintAttributes as `prop:${K}`]?: SmLargestContentfulPaint[K] };
+        "sm-number-of-requests": Omit<SmNumberOfRequests, keyof SmNumberOfRequestsAttributes> & { [K in keyof SmNumberOfRequests & keyof SmNumberOfRequestsAttributes]?: SmNumberOfRequests[K] } & { [K in keyof SmNumberOfRequests & keyof SmNumberOfRequestsAttributes as `attr:${K}`]?: SmNumberOfRequestsAttributes[K] } & { [K in keyof SmNumberOfRequests & keyof SmNumberOfRequestsAttributes as `prop:${K}`]?: SmNumberOfRequests[K] };
     }
 }
 export { LocalJSX as JSX };
@@ -102,6 +127,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "sm-largest-contentful-paint": LocalJSX.IntrinsicElements["sm-largest-contentful-paint"] & JSXBase.HTMLAttributes<HTMLSmLargestContentfulPaintElement>;
+            "sm-number-of-requests": LocalJSX.IntrinsicElements["sm-number-of-requests"] & JSXBase.HTMLAttributes<HTMLSmNumberOfRequestsElement>;
         }
     }
 }

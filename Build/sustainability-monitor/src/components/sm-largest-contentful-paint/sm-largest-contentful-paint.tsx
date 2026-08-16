@@ -1,4 +1,5 @@
 import { Component, Host, Prop, State, h } from '@stencil/core';
+import { formatTime } from '../../utils/sm-utils';
 
 @Component({
   tag: 'sm-largest-contentful-paint',
@@ -12,24 +13,24 @@ export class SmLargestContentfulPaint {
   @Prop() label: string = 'Largest Contentful Paint';
 
   /**
+   * Highlight LCP element
+   */
+  @Prop() highlight: boolean = false;
+
+  /**
    * Highlight element label
    */
-  @Prop() highlightElementLabel: string = '?';
+  @Prop() highlightLabel: string = '?';
 
   /**
    * Highlight element class
    */
-  @Prop() highlightElementClass: string = 'highlighted';
+  @Prop() highlightClass: string = 'highlighted';
 
   /**
-   * Aria label for the highlight button
+   * Highlight button aria-label
    */
   @Prop() ariaLabel: string = 'Show Largest Contentful Paint Element';
-
-  /**
-   * Highlight LCP element
-   */
-  @Prop() highlight: boolean = false;
 
   /**
    * Popover text
@@ -39,7 +40,7 @@ export class SmLargestContentfulPaint {
   /**
    * Largest Contentful Paint value
    */
-  @State() lcp: number | null = null;
+  @State() lcp: number = 0;
 
   /**
    * Highlighted element
@@ -47,32 +48,54 @@ export class SmLargestContentfulPaint {
   @State() highlightElement?: Element | null = null;
 
   /**
+   * Whether to calculate LCP or not
+   */
+  @State() isReady: boolean = false;
+
+  /**
    * Popover element
    */
-  popover!: HTMLDivElement;
+  private popoverElement!: HTMLDivElement;
 
-  componentDidRender() {
-    console.log('componentDidRender');
-    const observer = new PerformanceObserver((list) => {
-      const entries = list.getEntries();
-      const lastEntry = entries[entries.length - 1] as PerformanceEntry & { element?: Element | null };
-      if (!lastEntry) {
-        return;
-      }
-      this.lcp = lastEntry.startTime;
-      if (this.highlight && lastEntry.startTime) {
-        this.highlightElement = lastEntry.element;
-      }
-    });
-    observer.observe({ type: 'largest-contentful-paint', buffered: true });
+  /**
+   * Performance observer for LCP
+   */
+  private performanceObserver?: PerformanceObserver;
+
+  performanceObserverHandler(list: PerformanceObserverEntryList) {
+    const entries = list.getEntries();
+    const lastEntry = entries[entries.length - 1] as PerformanceEntry & { element?: Element | null };
+    if (!lastEntry) {
+      return;
+    }
+    this.lcp = lastEntry.startTime ?? 0;
+    this.isReady = true;
+    this.highlightElement = null;
+    if (this.highlight && this.lcp > 0 && lastEntry.element) {
+      this.highlightElement = lastEntry.element;
+    }
+  }
+
+  componentDidLoad() {
+    if (typeof PerformanceObserver === 'undefined' || this.performanceObserver) {
+      console.error('PerformanceObserver is not supported in this browser.');
+      return;
+    }
+
+    this.performanceObserver = new PerformanceObserver((list) => this.performanceObserverHandler(list));
+    this.performanceObserver.observe({ type: 'largest-contentful-paint', buffered: true });
+  }
+
+  disconnectedCallback() {
+    this.performanceObserver?.disconnect();
   }
 
   highlightElementHandler(_event: Event) {
     if (this.highlightElement) {
       this.highlightElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      this.highlightElement.classList.add(this.highlightElementClass);
+      this.highlightElement.classList.add(this.highlightClass);
       setTimeout(() => {
-        this.highlightElement?.classList.remove(this.highlightElementClass);
+        this.highlightElement?.classList.remove(this.highlightClass);
       }, 2000);
     }
   }
@@ -80,20 +103,28 @@ export class SmLargestContentfulPaint {
   render() {
     return (
       <Host>
-        <div class="lcp-container">
-          {this.lcp !== null && <div class="value">{this.lcp.toFixed(2)} ms</div>}
-          {this.label && <div class="label">{this.label}</div>}
-          {this.highlightElement && <button
-            popoverTarget="auto"
-            class="highlight-button"
-            aria-label={this.ariaLabel}
-            onMouseEnter={() => this.popover.showPopover()}
-            onMouseLeave={() => this.popover.hidePopover()}
-            onClick={event => this.highlightElementHandler(event)}>{this.highlightElementLabel}
-          </button>}
-          <div popover="auto" class="popover" ref={el => this.popover = el as HTMLDivElement}>
-            {this.popoverText}
-          </div>
+        <div class={{ 'container': true, 'loading': !this.isReady, 'ready': this.isReady }} part="container">
+          <div class="value" part="value">{formatTime(this.lcp)}</div>
+          {this.label && <div class="label" part="label">
+            {this.label}
+            {this.highlight && <div><button
+              disabled={!this.highlightElement}
+              popoverTarget="auto"
+              class="button"
+              part="button"
+              aria-label={this.ariaLabel}
+              onMouseEnter={() => this.popoverElement.showPopover()}
+              onMouseLeave={() => this.popoverElement.hidePopover()}
+              onFocus={() => this.popoverElement.showPopover()}
+              onBlur={() => this.popoverElement.hidePopover()}
+              onClick={event => this.highlightElementHandler(event)}>
+              {this.highlightLabel}
+            </button>
+              <div popover="auto" class="popover" part="popover" ref={el => this.popoverElement = el as HTMLDivElement}>
+                {this.popoverText}
+              </div>
+            </div>}
+          </div>}
         </div>
       </Host>
     );
