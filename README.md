@@ -73,3 +73,43 @@ to use the WebComponent include the javascript file `packages/sustainability_mon
 | `"container"` |             |
 | `"label"`     |             |
 | `"value"`     |             |
+
+
+### Co2 Emission
+
+#### Properties
+
+| Property | Attribute | Description | Type     | Default                                                          |
+| -------- | --------- | ----------- | -------- | ---------------------------------------------------------------- |
+| `info`   | `info`    | Title       | `string` | `'The Co2 emission is calculated based on the transfered size.'` |
+| `label`  | `label`   | Label       | `string` | `'Co2 Emission'`                                                 |
+| `locale` | `locale`  | Locale      | `string` | `'de-DE'`                                                        |
+
+
+#### Shadow Parts
+
+| Part          | Description |
+| ------------- | ----------- |
+| `"container"` |             |
+| `"label"`     |             |
+| `"value"`     |             |
+
+
+### Transferred Size
+
+#### Properties
+
+| Property | Attribute | Description | Type     | Default                   |
+| -------- | --------- | ----------- | -------- | ------------------------- |
+| `info`   | `info`    | Title       | `string` | `'The Transferred Size.'` |
+| `label`  | `label`   | Label       | `string` | `'Transferred Size'`      |
+| `locale` | `locale`  | Locale      | `string` | `'de-DE'`                 |
+
+
+#### Shadow Parts
+
+| Part          | Description |
+| ------------- | ----------- |
+| `"container"` |             |
+| `"label"`     |             |
+| `"value"`     |             |
