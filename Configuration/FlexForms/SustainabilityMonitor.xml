@@ -43,5 +43,19 @@
                 </el>
             </ROOT>
         </sNumberOfRequests>
+        <sCo2Emission>
+            <ROOT>
+                <sheetTitle>sustainability_monitor.db:flexforms_tab.settings.co2emission</sheetTitle>
+                <type>array</type>
+                <el>
+                    <settings.enableCo2Emission>
+                        <label>Enable Co2 Emission</label>
+                        <config>
+                            <type>check</type>
+                        </config>
+                    </settings.enableCo2Emission>
+                </el>
+            </ROOT>
+        </sCo2Emission>
     </sheets>
 </T3DataStructure>

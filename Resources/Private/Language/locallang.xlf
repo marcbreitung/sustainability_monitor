@@ -39,8 +39,17 @@
         </unit>
         <unit id="plugin.sustainabilitymonitor.numberOfRequests.info">
             <segment>
-                <source>The number of requests is calculated based on the number of entries in the
-                    PerformanceObserverEntryList.</source>
+                <source>The number of requests is calculated based on the number of entries in the PerformanceObserverEntryList.</source>
+            </segment>
+        </unit>
+        <unit id="plugin.sustainabilitymonitor.enableCo2Emission.label">
+            <segment>
+                <source>Co2 Emission</source>
+            </segment>
+        </unit>
+        <unit id="plugin.sustainabilitymonitor.enableCo2Emission.info">
+            <segment>
+                <source>The Co2 emission is calculated based on the transfered size.</source>
             </segment>
         </unit>
     </file>

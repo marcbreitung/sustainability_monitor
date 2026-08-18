@@ -6,6 +6,23 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface SmCo2Emission {
+        /**
+          * Title
+          * @default 'The Co2 emission is calculated based on the transfered size.'
+         */
+        "info": string;
+        /**
+          * Label
+          * @default 'Co2 Emission'
+         */
+        "label": string;
+        /**
+          * Locale
+          * @default 'de-DE'
+         */
+        "locale": string;
+    }
     interface SmLargestContentfulPaint {
         /**
           * Highlight button aria-label
@@ -57,6 +74,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLSmCo2EmissionElement extends Components.SmCo2Emission, HTMLStencilElement {
+    }
+    var HTMLSmCo2EmissionElement: {
+        prototype: HTMLSmCo2EmissionElement;
+        new (): HTMLSmCo2EmissionElement;
+    };
     interface HTMLSmLargestContentfulPaintElement extends Components.SmLargestContentfulPaint, HTMLStencilElement {
     }
     var HTMLSmLargestContentfulPaintElement: {
@@ -70,11 +93,29 @@ declare global {
         new (): HTMLSmNumberOfRequestsElement;
     };
     interface HTMLElementTagNameMap {
+        "sm-co2-emission": HTMLSmCo2EmissionElement;
         "sm-largest-contentful-paint": HTMLSmLargestContentfulPaintElement;
         "sm-number-of-requests": HTMLSmNumberOfRequestsElement;
     }
 }
 declare namespace LocalJSX {
+    interface SmCo2Emission {
+        /**
+          * Title
+          * @default 'The Co2 emission is calculated based on the transfered size.'
+         */
+        "info"?: string;
+        /**
+          * Label
+          * @default 'Co2 Emission'
+         */
+        "label"?: string;
+        /**
+          * Locale
+          * @default 'de-DE'
+         */
+        "locale"?: string;
+    }
     interface SmLargestContentfulPaint {
         /**
           * Highlight button aria-label
@@ -125,6 +166,11 @@ declare namespace LocalJSX {
         "label"?: string;
     }
 
+    interface SmCo2EmissionAttributes {
+        "label": string;
+        "locale": string;
+        "info": string;
+    }
     interface SmLargestContentfulPaintAttributes {
         "label": string;
         "highlight": boolean;
@@ -140,6 +186,7 @@ declare namespace LocalJSX {
     }
 
     interface IntrinsicElements {
+        "sm-co2-emission": Omit<SmCo2Emission, keyof SmCo2EmissionAttributes> & { [K in keyof SmCo2Emission & keyof SmCo2EmissionAttributes]?: SmCo2Emission[K] } & { [K in keyof SmCo2Emission & keyof SmCo2EmissionAttributes as `attr:${K}`]?: SmCo2EmissionAttributes[K] } & { [K in keyof SmCo2Emission & keyof SmCo2EmissionAttributes as `prop:${K}`]?: SmCo2Emission[K] };
         "sm-largest-contentful-paint": Omit<SmLargestContentfulPaint, keyof SmLargestContentfulPaintAttributes> & { [K in keyof SmLargestContentfulPaint & keyof SmLargestContentfulPaintAttributes]?: SmLargestContentfulPaint[K] } & { [K in keyof SmLargestContentfulPaint & keyof SmLargestContentfulPaintAttributes as `attr:${K}`]?: SmLargestContentfulPaintAttributes[K] } & { [K in keyof SmLargestContentfulPaint & keyof SmLargestContentfulPaintAttributes as `prop:${K}`]?: SmLargestContentfulPaint[K] };
         "sm-number-of-requests": Omit<SmNumberOfRequests, keyof SmNumberOfRequestsAttributes> & { [K in keyof SmNumberOfRequests & keyof SmNumberOfRequestsAttributes]?: SmNumberOfRequests[K] } & { [K in keyof SmNumberOfRequests & keyof SmNumberOfRequestsAttributes as `attr:${K}`]?: SmNumberOfRequestsAttributes[K] } & { [K in keyof SmNumberOfRequests & keyof SmNumberOfRequestsAttributes as `prop:${K}`]?: SmNumberOfRequests[K] };
     }
@@ -148,6 +195,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "sm-co2-emission": LocalJSX.IntrinsicElements["sm-co2-emission"] & JSXBase.HTMLAttributes<HTMLSmCo2EmissionElement>;
             "sm-largest-contentful-paint": LocalJSX.IntrinsicElements["sm-largest-contentful-paint"] & JSXBase.HTMLAttributes<HTMLSmLargestContentfulPaintElement>;
             "sm-number-of-requests": LocalJSX.IntrinsicElements["sm-number-of-requests"] & JSXBase.HTMLAttributes<HTMLSmNumberOfRequestsElement>;
         }

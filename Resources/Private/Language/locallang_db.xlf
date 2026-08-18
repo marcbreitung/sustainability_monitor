@@ -21,5 +21,10 @@
                 <source>Number of Requests</source>
             </segment>
         </unit>
+        <unit id="flexforms_tab.settings.numberofrequests">
+            <segment>
+                <source>Co2 Emission</source>
+            </segment>
+        </unit>
     </file>
 </xliff>

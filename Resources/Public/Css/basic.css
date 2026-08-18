@@ -7,6 +7,7 @@ sm-largest-contentful-paint::part(container) {
 
 sm-largest-contentful-paint::part(value) {
     font-size: 1.5rem;
+    flex-basis: 5rem;
 }
 
 sm-largest-contentful-paint::part(button) {
@@ -27,8 +28,25 @@ sm-number-of-requests::part(container) {
 
 sm-number-of-requests::part(value) {
     font-size: 1.5rem;
+    flex-basis: 5rem;
 }
 
 sm-number-of-requests::part(button) {
+    color: black;
+}
+
+/**
+ * Override styles for the sm-co2-emission
+ */
+sm-co2-emission::part(container) {
+    color: black;
+}
+
+sm-co2-emission::part(value) {
+    font-size: 1.5rem;
+    flex-basis: 5rem;
+}
+
+sm-co2-emission::part(button) {
     color: black;
 }

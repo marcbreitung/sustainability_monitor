@@ -24,6 +24,7 @@ class SustainabilityMonitorController extends ActionController
                 ['type' => 'module']
             );
         }
+
         if ($this->settings['enableNumberOfRequests'] ?? false) {
             $this->assetCollector->addJavaScript(
                 'sustainability-monitor-number-of-requests',
@@ -31,6 +32,15 @@ class SustainabilityMonitorController extends ActionController
                 ['type' => 'module']
             );
         }
+
+        if ($this->settings['enableCo2Emission'] ?? false) {
+            $this->assetCollector->addJavaScript(
+                'sustainability-monitor-co2-emission',
+                'EXT:sustainability_monitor/Resources/Public/JavaScript/sm-co2-emission.js',
+                ['type' => 'module']
+            );
+        }
+
         return $this->htmlResponse();
     }
 }
