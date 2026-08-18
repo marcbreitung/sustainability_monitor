@@ -1,9 +1,5 @@
 import { co2 } from '@tgwf/co2';
 
-export const formatTime = (timeInMs: number): string => {
-    return (timeInMs / 1000).toFixed(2) + " s";
-}
-
 export const getLargestContentfulPaint = async (): Promise<number | null> => {
     if (!('PerformanceObserver' in window)) {
         console.warn('PerformanceObserver is not supported in this browser.');
@@ -82,4 +78,13 @@ export const formatGram = (gram: number, locales: Intl.LocalesArgument) => {
         style: 'unit',
         unit: 'gram',
     }).format(gram);
+}
+
+export const formatSeconds = (presentationTime: number, locales: Intl.LocalesArgument) => {
+    return new Intl.NumberFormat(locales, {
+        minimumFractionDigits: 3,
+        maximumFractionDigits: 3,
+        style: 'unit',
+        unit: 'second',
+    }).format(presentationTime / 1000);
 }

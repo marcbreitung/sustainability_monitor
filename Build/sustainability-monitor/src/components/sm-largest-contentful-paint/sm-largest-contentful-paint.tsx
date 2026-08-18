@@ -1,5 +1,5 @@
 import { Component, Host, Prop, State, h } from '@stencil/core';
-import { formatTime } from '../../utils/sm-utils';
+import { formatSeconds } from '../../utils/sm-utils';
 
 @Component({
   tag: 'sm-largest-contentful-paint',
@@ -41,6 +41,11 @@ export class SmLargestContentfulPaint {
    * Title
    */
   @Prop() info: string = 'The Largest Contentful Paint is calculated based on the startTime property of the last entry in the PerformanceObserverEntryList.';
+
+  /**
+   * Locale
+   */
+  @Prop() locale: string = 'de-DE'
 
   /**
    * Largest Contentful Paint value
@@ -109,7 +114,7 @@ export class SmLargestContentfulPaint {
     return (
       <Host>
         <div class={{ 'container': true, 'loading': !this.isReady, 'ready': this.isReady }} part="container">
-          <div class="value" part="value">{formatTime(this.lcp)}</div>
+          <div class="value" part="value">{formatSeconds(this.lcp, this.locale)}</div>
           {this.label && <div class="label" part="label">
             {this.info ? <span class="info" title={this.info}>{this.label}</span> : <span>{this.label}</span>}
             {this.highlight && <div><button

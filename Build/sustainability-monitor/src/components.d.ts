@@ -55,6 +55,11 @@ export namespace Components {
          */
         "label": string;
         /**
+          * Locale
+          * @default 'de-DE'
+         */
+        "locale": string;
+        /**
           * Popover text
           * @default 'Click to highlight the largest contentful paint element'
          */
@@ -148,6 +153,11 @@ declare namespace LocalJSX {
          */
         "label"?: string;
         /**
+          * Locale
+          * @default 'de-DE'
+         */
+        "locale"?: string;
+        /**
           * Popover text
           * @default 'Click to highlight the largest contentful paint element'
          */
@@ -179,6 +189,7 @@ declare namespace LocalJSX {
         "ariaLabel": string;
         "popoverText": string;
         "info": string;
+        "locale": string;
     }
     interface SmNumberOfRequestsAttributes {
         "label": string;

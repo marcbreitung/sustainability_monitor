@@ -1,5 +1,4 @@
 import { Component, Host, Prop, State, h } from '@stencil/core';
-// import { co2 } from '@tgwf/co2';
 import { calculateEmission, calculateSizeOfData, formatGram } from '../../utils/sm-utils';
 
 @Component({
@@ -14,24 +13,24 @@ export class SmCo2Emission {
   @Prop() label: string = 'Co2 Emission';
 
   /**
-   * Number of requests
-   */
-  @State() co2emission: string = "";
-
-  /**
    * Locale
    */
   @Prop() locale: string = 'de-DE'
 
   /**
-   * Whether to calculate number of requests or not
-   */
-  @State() isReady: boolean = false;
-
-  /**
    * Title
    */
   @Prop() info: string = 'The Co2 emission is calculated based on the transfered size.';
+
+  /**
+   * Number of requests
+   */
+  @State() co2emission: string = "";
+
+  /**
+   * Whether to calculate number of requests or not
+   */
+  @State() isReady: boolean = false;
 
   componentWillLoad() {
     this.co2emission = formatGram(0, this.locale);

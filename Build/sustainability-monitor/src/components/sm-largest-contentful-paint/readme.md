@@ -15,6 +15,7 @@ This component displays the Largest Contentful Paint (LCP) value and provides a 
 | `highlightLabel` | `highlight-label` | Highlight element label     | `string`  | `'?'`                                                                                                                                 |
 | `info`           | `info`            | Title                       | `string`  | `'The Largest Contentful Paint is calculated based on the startTime property of the last entry in the PerformanceObserverEntryList.'` |
 | `label`          | `label`           | Label                       | `string`  | `'Largest Contentful Paint'`                                                                                                          |
+| `locale`         | `locale`          | Locale                      | `string`  | `'de-DE'`                                                                                                                             |
 | `popoverText`    | `popover-text`    | Popover text                | `string`  | `'Click to highlight the largest contentful paint element'`                                                                           |
 
 
