@@ -50,3 +50,19 @@ sm-co2-emission::part(value) {
 sm-co2-emission::part(button) {
     color: black;
 }
+
+/**
+ * Override styles for the sm-transferred-size
+ */
+sm-transferred-size::part(container) {
+    color: black;
+}
+
+sm-transferred-size::part(value) {
+    font-size: 1.2rem;
+    flex-basis: 6rem;
+}
+
+sm-transferred-size::part(button) {
+    color: black;
+}

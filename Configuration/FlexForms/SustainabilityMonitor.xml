@@ -57,5 +57,19 @@
                 </el>
             </ROOT>
         </sCo2Emission>
+        <sTransferredSize>
+            <ROOT>
+                <sheetTitle>sustainability_monitor.db:flexforms_tab.settings.transferredsize</sheetTitle>
+                <type>array</type>
+                <el>
+                    <settings.enableTransferredSize>
+                        <label>Enable Trabsferred Size</label>
+                        <config>
+                            <type>check</type>
+                        </config>
+                    </settings.enableTransferredSize>
+                </el>
+            </ROOT>
+        </sTransferredSize>
     </sheets>
 </T3DataStructure>

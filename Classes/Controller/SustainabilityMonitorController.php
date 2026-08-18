@@ -41,6 +41,14 @@ class SustainabilityMonitorController extends ActionController
             );
         }
 
+        if ($this->settings['enableTransferredSize'] ?? false) {
+            $this->assetCollector->addJavaScript(
+                'sustainability-monitor-transferred-size',
+                'EXT:sustainability_monitor/Resources/Public/JavaScript/sm-transferred-size.js',
+                ['type' => 'module']
+            );
+        }
+
         return $this->htmlResponse();
     }
 }

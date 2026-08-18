@@ -42,14 +42,24 @@
                 <source>The number of requests is calculated based on the number of entries in the PerformanceObserverEntryList.</source>
             </segment>
         </unit>
-        <unit id="plugin.sustainabilitymonitor.enableCo2Emission.label">
+        <unit id="plugin.sustainabilitymonitor.co2Emission.label">
             <segment>
                 <source>Co2 Emission</source>
             </segment>
         </unit>
-        <unit id="plugin.sustainabilitymonitor.enableCo2Emission.info">
+        <unit id="plugin.sustainabilitymonitor.co2Emission.info">
             <segment>
                 <source>The Co2 emission is calculated based on the transfered size.</source>
+            </segment>
+        </unit>
+        <unit id="plugin.sustainabilitymonitor.transferredSize.label">
+            <segment>
+                <source>Transferred Size</source>
+            </segment>
+        </unit>
+        <unit id="plugin.sustainabilitymonitor.transferredSize.info">
+            <segment>
+                <source>The Transferred Size.</source>
             </segment>
         </unit>
     </file>

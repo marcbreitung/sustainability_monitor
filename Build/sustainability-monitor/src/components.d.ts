@@ -77,6 +77,23 @@ export namespace Components {
          */
         "label": string;
     }
+    interface SmTransferredSize {
+        /**
+          * Title
+          * @default 'The Transferred Size.'
+         */
+        "info": string;
+        /**
+          * Label
+          * @default 'Transferred Size'
+         */
+        "label": string;
+        /**
+          * Locale
+          * @default 'de-DE'
+         */
+        "locale": string;
+    }
 }
 declare global {
     interface HTMLSmCo2EmissionElement extends Components.SmCo2Emission, HTMLStencilElement {
@@ -97,10 +114,17 @@ declare global {
         prototype: HTMLSmNumberOfRequestsElement;
         new (): HTMLSmNumberOfRequestsElement;
     };
+    interface HTMLSmTransferredSizeElement extends Components.SmTransferredSize, HTMLStencilElement {
+    }
+    var HTMLSmTransferredSizeElement: {
+        prototype: HTMLSmTransferredSizeElement;
+        new (): HTMLSmTransferredSizeElement;
+    };
     interface HTMLElementTagNameMap {
         "sm-co2-emission": HTMLSmCo2EmissionElement;
         "sm-largest-contentful-paint": HTMLSmLargestContentfulPaintElement;
         "sm-number-of-requests": HTMLSmNumberOfRequestsElement;
+        "sm-transferred-size": HTMLSmTransferredSizeElement;
     }
 }
 declare namespace LocalJSX {
@@ -175,6 +199,23 @@ declare namespace LocalJSX {
          */
         "label"?: string;
     }
+    interface SmTransferredSize {
+        /**
+          * Title
+          * @default 'The Transferred Size.'
+         */
+        "info"?: string;
+        /**
+          * Label
+          * @default 'Transferred Size'
+         */
+        "label"?: string;
+        /**
+          * Locale
+          * @default 'de-DE'
+         */
+        "locale"?: string;
+    }
 
     interface SmCo2EmissionAttributes {
         "label": string;
@@ -195,11 +236,17 @@ declare namespace LocalJSX {
         "label": string;
         "info": string;
     }
+    interface SmTransferredSizeAttributes {
+        "label": string;
+        "locale": string;
+        "info": string;
+    }
 
     interface IntrinsicElements {
         "sm-co2-emission": Omit<SmCo2Emission, keyof SmCo2EmissionAttributes> & { [K in keyof SmCo2Emission & keyof SmCo2EmissionAttributes]?: SmCo2Emission[K] } & { [K in keyof SmCo2Emission & keyof SmCo2EmissionAttributes as `attr:${K}`]?: SmCo2EmissionAttributes[K] } & { [K in keyof SmCo2Emission & keyof SmCo2EmissionAttributes as `prop:${K}`]?: SmCo2Emission[K] };
         "sm-largest-contentful-paint": Omit<SmLargestContentfulPaint, keyof SmLargestContentfulPaintAttributes> & { [K in keyof SmLargestContentfulPaint & keyof SmLargestContentfulPaintAttributes]?: SmLargestContentfulPaint[K] } & { [K in keyof SmLargestContentfulPaint & keyof SmLargestContentfulPaintAttributes as `attr:${K}`]?: SmLargestContentfulPaintAttributes[K] } & { [K in keyof SmLargestContentfulPaint & keyof SmLargestContentfulPaintAttributes as `prop:${K}`]?: SmLargestContentfulPaint[K] };
         "sm-number-of-requests": Omit<SmNumberOfRequests, keyof SmNumberOfRequestsAttributes> & { [K in keyof SmNumberOfRequests & keyof SmNumberOfRequestsAttributes]?: SmNumberOfRequests[K] } & { [K in keyof SmNumberOfRequests & keyof SmNumberOfRequestsAttributes as `attr:${K}`]?: SmNumberOfRequestsAttributes[K] } & { [K in keyof SmNumberOfRequests & keyof SmNumberOfRequestsAttributes as `prop:${K}`]?: SmNumberOfRequests[K] };
+        "sm-transferred-size": Omit<SmTransferredSize, keyof SmTransferredSizeAttributes> & { [K in keyof SmTransferredSize & keyof SmTransferredSizeAttributes]?: SmTransferredSize[K] } & { [K in keyof SmTransferredSize & keyof SmTransferredSizeAttributes as `attr:${K}`]?: SmTransferredSizeAttributes[K] } & { [K in keyof SmTransferredSize & keyof SmTransferredSizeAttributes as `prop:${K}`]?: SmTransferredSize[K] };
     }
 }
 export { LocalJSX as JSX };
@@ -209,6 +256,7 @@ declare module "@stencil/core" {
             "sm-co2-emission": LocalJSX.IntrinsicElements["sm-co2-emission"] & JSXBase.HTMLAttributes<HTMLSmCo2EmissionElement>;
             "sm-largest-contentful-paint": LocalJSX.IntrinsicElements["sm-largest-contentful-paint"] & JSXBase.HTMLAttributes<HTMLSmLargestContentfulPaintElement>;
             "sm-number-of-requests": LocalJSX.IntrinsicElements["sm-number-of-requests"] & JSXBase.HTMLAttributes<HTMLSmNumberOfRequestsElement>;
+            "sm-transferred-size": LocalJSX.IntrinsicElements["sm-transferred-size"] & JSXBase.HTMLAttributes<HTMLSmTransferredSizeElement>;
         }
     }
 }

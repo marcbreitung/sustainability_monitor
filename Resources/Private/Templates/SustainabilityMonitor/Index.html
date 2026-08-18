@@ -25,9 +25,16 @@
 
 <f:if condition="{settings.enableCo2Emission}">
     <sm-co2-emission 
-        label="{f:translate(key: 'plugin.sustainabilitymonitor.enableCo2Emission.label')}" 
-        info="{f:translate(key: 'plugin.sustainabilitymonitor.enableCo2Emission.info')}">
+        label="{f:translate(key: 'plugin.sustainabilitymonitor.co2Emission.label')}" 
+        info="{f:translate(key: 'plugin.sustainabilitymonitor.co2Emission.info')}">
     </sm-co2-emission>
+</f:if>
+
+<f:if condition="{settings.enableTransferredSize}">
+    <sm-transferred-size
+        label="{f:translate(key: 'plugin.sustainabilitymonitor.transferredSize.label')}" 
+        info="{f:translate(key: 'plugin.sustainabilitymonitor.transferredSize.info')}">
+    </sm-transferred-size>
 </f:if>
 
 </html>
