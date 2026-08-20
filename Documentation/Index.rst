@@ -6,11 +6,9 @@ marcbreitung/sustainability-monitor
 
 Sustainability Monitor - TYPO3 extension for displaying web sustainability metrics in the frontend.
 
-..  note::
-    This documentation guide was automatically created by the init command of
-    the TYPO3 Documentation Rendering Container. See
-    `Rendering container <https://docs.typo3.org/permalink/h2document:rendering>`_
-    for details.
+The Sustainability Monitor displays browser-side performance and transfer metrics
+for the current page. It can be used as a TYPO3 frontend plugin or as a set of
+standalone Web Components.
 
 ..  toctree::
     :glob:
@@ -20,6 +18,9 @@ Sustainability Monitor - TYPO3 extension for displaying web sustainability metri
     */Index
     Installation
     Configuration
+    Usage
+    Metrics
+    WebComponents
     GetHelp
     *
 
@@ -32,13 +33,23 @@ Sustainability Monitor - TYPO3 extension for displaying web sustainability metri
 
     ..  card:: :ref:`Installation <installation>`
 
-        Explains how to install this extension in Composer-based and Classic
-        TYPO3 installations.
+        Install the extension in a Composer-based or Classic TYPO3 installation.
 
     ..  card:: :ref:`Configuration <configuration>`
 
-                Learn how to include the site set `marcbreitung/sustainability-monitor` and how to use settings
-        to configure this extension.
+        Include the site set and configure the plugin settings.
+
+    ..  card:: :ref:`Using the plugin <usage-plugin>`
+
+        Add the plugin to a page and select the metrics to display.
+
+    ..  card:: :ref:`Metrics <metrics>`
+
+        Learn what each metric measures and how its value is calculated.
+
+    ..  card:: :ref:`Standalone Web Components <webcomponents>`
+
+        Use the metric elements without the TYPO3 plugin.
         
     ..  card:: :ref:`Frequently Asked Questions (FAQ) <faq>`
 
